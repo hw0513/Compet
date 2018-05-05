@@ -1,0 +1,29 @@
+server:
+
+  tomcat:
+    max-threads: 30
+    uri-encoding: utf-8
+  port: 8888
+  session:
+    timeout: 30
+
+spring:
+  profiles:
+    active: prod
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springdeta?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSourceC3P0Adapter
+
+
+
+mybatis:
+  type-aliases-package: competition.entity
+  mapper-locations: classpath:mapper/*.xml
+
+
+
+

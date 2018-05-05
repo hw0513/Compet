@@ -1,0 +1,44 @@
+package competition.controller;
+
+import competition.entity.Competition;
+import competition.entity.Message_board;
+import competition.entity.Request;
+import competition.service.Message_boardService;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+
+@RestController
+@RequestMapping("/message_board")
+public class Message_boardController {
+    @Resource
+    private Message_boardService message_boardService;
+
+    @RequestMapping(value = "/add")
+    public Request addMessage_board(Message_board message_board,String competition_id){
+        Competition competition=new Competition();
+        competition.setId(competition_id);
+        message_board.setCompetition(competition);
+        return message_boardService.addMessage_board(message_board);
+    }
+
+    @RequestMapping("/update")
+    public Request updateMessage_board(Message_board message_board){
+        return message_boardService.updateMessage_board(message_board);
+    }
+
+    @RequestMapping("/del")
+    public Request delMessage_board(Message_board message_board){
+        return message_boardService.delMessage_board(message_board);
+    }
+    @RequestMapping("/list")
+    public Request listMessage_board(){
+        return message_boardService.listMessage_board();
+    }
+
+    @RequestMapping("/endRegistration")
+    public Request endRegistrationMessage_board(){
+        return message_boardService.endRegistrationMessage_board();
+    }
+}

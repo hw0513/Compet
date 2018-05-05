@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//MYBATIS.ORG//DTD MAPPER 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="competition.dao.NewsDao">
+    <resultMap id="BaseResultMap" type="competition.entity.News" >
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="content"  property="content"  jdbcType="VARCHAR" />
+        <result column="title"  property="title"  jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="loginAdmin"  parameterType="competition.entity.News" resultMap="BaseResultMap" >
+        select * from admin WHERE username=#{username} AND  password=#{password}
+    </select>
+
+    <insert id="addNews" parameterType="competition.entity.News" >
+        /*采用数据库自带的uuid生成主键*/
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        insert into news (id,content,title) VALUES (
+        #{id},#{content},#{title}
+        )
+    </insert>
+
+    <update id="updateAdmin" parameterType="competition.entity.Admin">
+        UPDATE admin SET username=#{username},password=#{password} WHERE id =#{id}
+    </update>
+</mapper>

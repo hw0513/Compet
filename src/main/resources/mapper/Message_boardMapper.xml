@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//MYBATIS.ORG//DTD MAPPER 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="competition.dao.Message_boardDao">
+
+    <resultMap id="BaseResultMap" type="competition.entity.Message_board" >
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="start_enter"  property="start_enter"  jdbcType="DATE" />
+        <result column="end_enter"  property="end_enter"  jdbcType="DATE" />
+        <result column="place"  property="place"  jdbcType="VARCHAR" />
+        <result column="begin_competition"  property="begin_competition"  jdbcType="DATE" />
+        <result column="total"  property="total"  jdbcType="INTEGER" />
+        <result column="isdel"  property="isdel"  jdbcType="VARCHAR" />
+        <association property="competition" javaType="Competition">
+            <id column="id" property="id"/>
+            <result column="name"  property="name"  jdbcType="VARCHAR" />
+            <result column="host_unit"  property="host_unit"  jdbcType="VARCHAR" />
+            <result column="lev"  property="lev"  jdbcType="VARCHAR" />
+            <result column="describe"  property="describe"  jdbcType="VARCHAR" />
+            <result column="competition_way"  property="competition_way"  jdbcType="INTEGER" />
+            <result column="type"  property="type"  jdbcType="VARCHAR" />
+            <result column="isdel"  property="isdel"  jdbcType="VARCHAR" />
+        </association>
+    </resultMap>
+
+    <select id="listMessage_board"  parameterType="competition.entity.Message_board" resultMap="BaseResultMap" >
+        select * from message_board LEFT JOIN competition ON message_board.competition=competition.id WHERE message_board.isdel='1'
+    </select>
+
+    <insert id="addMessage_board" parameterType="competition.entity.Message_board" >
+        /*采用数据库自带的uuid生成主键*/
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        insert into message_board (id,competition,start_enter,end_enter,place,begin_competition,total,isdel) VALUES (
+        #{id},#{competition.id},#{start_enter},#{end_enter},#{place},#{begin_competition},0,'1'
+        )
+    </insert>
+
+    <update id="updateMessage_board" parameterType="competition.entity.Message_board">
+        UPDATE message_board SET competition=#{competition.id},start_enter=#{start_enter}, end_enter=#{end_enter},place=#{place},begin_competition=#{begin_competition} WHERE id =#{id}
+    </update>
+
+    <select id="endRegistrationMessage_board"  parameterType="competition.entity.Message_board" resultMap="BaseResultMap" >
+        select * from message_board LEFT JOIN competition ON message_board.competition=competition.id WHERE message_board.isdel='1'AND end_enter>now();
+    </select>
+
+
+</mapper>

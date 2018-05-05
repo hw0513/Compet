@@ -1,0 +1,15 @@
+package competition.service;
+
+import competition.entity.Competition;
+import competition.entity.Request;
+
+public interface CompetitionService {
+
+    Request addCompetition(Competition competition);
+
+    Request updateCompetition(Competition competition);
+
+    Request delCompetition(Competition competition);
+
+    Request findAllCompetition();
+}
