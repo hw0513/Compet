@@ -1,7 +1,7 @@
 package competition.controller;
 
-import competition.entity.User;
 import competition.entity.Request;
+import competition.entity.User;
 import competition.service.UserService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,28 +21,26 @@ public class UserController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public Request addUser(User user)
-    {
+    public Request addUser(User user) {
 
         return userService.addUser(user);
     }
+
     @RequestMapping("/login")
     @ResponseBody
-    public Request loginUser(User user)
-    {
+    public Request loginUser(User user) {
         return userService.loginUser(user);
     }
+
     @RequestMapping("/update")
     @ResponseBody
-    public Request updateUser(User user)
-    {
+    public Request updateUser(User user) {
         return userService.updateUser(user);
     }
 
     @RequestMapping("/del")
     @ResponseBody
-    public Request delUser(User user)
-    {
+    public Request delUser(User user) {
         return userService.delUser(user);
     }
 }

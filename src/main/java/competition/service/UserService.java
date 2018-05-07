@@ -1,7 +1,7 @@
 package competition.service;
 
 import competition.entity.Request;
-import competition.entity.User ;
+import competition.entity.User;
 
 public interface UserService {
     Request addUser(User user);

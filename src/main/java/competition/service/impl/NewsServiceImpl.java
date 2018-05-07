@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @Service("newsService")
 @Transactional
-public class NewsServiceImpl implements NewsService{
+public class NewsServiceImpl implements NewsService {
     @Resource
     private NewsDao newsDao;
 

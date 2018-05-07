@@ -12,15 +12,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2 {
-    public Docket createRestApi(){
+    public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("com.didispace.web"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
-    private ApiInfo apiInfo()
-    {
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("").description("").termsOfServiceUrl("").contact("").version("1.0").build();
     }

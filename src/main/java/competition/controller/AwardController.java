@@ -16,9 +16,10 @@ import javax.annotation.Resource;
 public class AwardController {
     @Resource
     private AwardService awardService;
+
     @RequestMapping("/add")
     @ResponseBody
-    private Request addAward(Award award){
+    private Request addAward(Award award) {
         return awardService.addAward(award);
     }
 }

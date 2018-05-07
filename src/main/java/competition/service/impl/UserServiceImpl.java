@@ -2,8 +2,8 @@ package competition.service.impl;
 
 import competition.dao.UserDao;
 import competition.entity.Request;
+import competition.entity.User;
 import competition.service.UserService;
-import competition.entity.User ;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,19 +11,19 @@ import javax.annotation.Resource;
 
 @Service("userService")
 @Transactional
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
+
     @Override
     public Request addUser(User user) {
-        Request request=new Request();
+        Request request = new Request();
         request.setData(user);
         try {
             userDao.addUser(user);
             request.setMsg("成功");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             request.setMsg("失败");
         }
         return request;
@@ -31,12 +31,11 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Request loginUser(User user) {
-        Request request=new Request();
+        Request request = new Request();
         request.setData(user);
-        if(userDao.loginUser(user).size()>0){
+        if (userDao.loginUser(user).size() > 0) {
             request.setMsg("成功");
-        }
-        else{
+        } else {
             request.setMsg("失败");
         }
         return request;
@@ -44,13 +43,12 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Request updateUser(User user) {
-        Request request=new Request();
+        Request request = new Request();
         request.setData(user);
         try {
             userDao.updateUser(user);
             request.setMsg("成功");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             request.setMsg("失败");
         }
         return request;
@@ -58,13 +56,12 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Request delUser(User user) {
-        Request request=new Request();
+        Request request = new Request();
         request.setData(user);
         try {
             userDao.delUser(user);
             request.setMsg("成功");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             request.setMsg("失败");
         }
         return request;

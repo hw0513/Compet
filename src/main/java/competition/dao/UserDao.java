@@ -1,7 +1,6 @@
 package competition.dao;
 
 
-
 import competition.entity.User;
 
 import java.util.List;

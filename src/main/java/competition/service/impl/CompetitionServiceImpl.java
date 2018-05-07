@@ -18,11 +18,11 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public Request addCompetition(Competition competition) {
-        Request request=new Request();
-        try{
+        Request request = new Request();
+        try {
             competitionDao.addCompetition(competition);
             request.setMsg("成功");
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setData("失败");
         }
         return request;
@@ -30,11 +30,11 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public Request updateCompetition(Competition competition) {
-        Request request=new Request();
-        try{
+        Request request = new Request();
+        try {
             competitionDao.updateCompetition(competition);
             request.setMsg("成功");
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setMsg("失败");
         }
         return request;
@@ -42,12 +42,12 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public Request delCompetition(Competition competition) {
-        Request request=new Request();
-        try{
+        Request request = new Request();
+        try {
             competitionDao.delCompetition(competition);
             request.setMsg("成功");
             request.setData(competition);
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setMsg("失败");
         }
         return request;
@@ -55,12 +55,12 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public Request findAllCompetition() {
-        Request request=new Request();
+        Request request = new Request();
         try {
-            List list=competitionDao.findAllCompetition();
+            List list = competitionDao.findAllCompetition();
             request.setData(list);
             request.setMsg("成功");
-        }catch (Exception e){
+        } catch (Exception e) {
             request.setMsg("失败");
         }
         return request;

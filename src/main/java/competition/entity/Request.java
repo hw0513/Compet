@@ -1,5 +1,6 @@
 package competition.entity;
-public class Request{
+
+public class Request {
     private int code;
     private String msg;
     private Object data;

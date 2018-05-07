@@ -1,7 +1,6 @@
 package competition.dao;
 
 
-
 import competition.entity.Admin;
 
 import java.util.List;

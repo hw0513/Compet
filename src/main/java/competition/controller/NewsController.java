@@ -21,9 +21,7 @@ public class NewsController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public Request addAdmin(News news)
-    {
-        System.out.println(news);
+    public Request addAdmin(News news) {
         return newsService.addNews(news);
     }
 }

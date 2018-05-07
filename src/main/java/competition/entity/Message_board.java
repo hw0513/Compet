@@ -8,7 +8,7 @@ import java.util.Date;
  * 比赛信息类
  */
 
-public class Message_board{
+public class Message_board {
     private String id;
     private Competition competition;
     @DateTimeFormat(pattern = "yyyy-MM-dd")

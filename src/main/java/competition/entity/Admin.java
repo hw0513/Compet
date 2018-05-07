@@ -1,8 +1,8 @@
 package competition.entity;
 
 public class Admin {
-    private  String id;
-    private String username ; //用户名
+    private String id;
+    private String username; //用户名
     private String password;  //密码
 
 
