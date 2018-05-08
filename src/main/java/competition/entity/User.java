@@ -66,4 +66,17 @@ public class User {
     public void setIsdel(String isdel) {
         this.isdel = isdel;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", school_num=" + school_num +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", phone=" + phone +
+                ", user_class='" + user_class + '\'' +
+                ", isdel='" + isdel + '\'' +
+                '}';
+    }
 }

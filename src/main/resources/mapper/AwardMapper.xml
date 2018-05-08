@@ -39,8 +39,8 @@
 
     </resultMap>
 
-    <select id="loginAdmin" parameterType="competition.entity.Award" resultMap="BaseResultMap">
-        select * from admin WHERE username=#{username} AND  password=#{password}
+    <select id="listAwardByCompetition" parameterType="STRING" resultMap="BaseResultMap">
+        select * from award WHERE message_board=#{message_board}
     </select>
 
     <insert id="addAward" parameterType="competition.entity.Award">

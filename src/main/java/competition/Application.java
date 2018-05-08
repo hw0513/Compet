@@ -7,10 +7,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
+@EnableTransactionManagement//开启事务
 @SpringBootApplication
 @MapperScan("competition/dao")
 @EnableSwagger2
-@EnableTransactionManagement//开启事务
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

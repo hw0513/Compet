@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("newsService")
 @Transactional
@@ -19,5 +20,18 @@ public class NewsServiceImpl implements NewsService {
     public Request addNews(News news) {
         newsDao.addNews(news);
         return null;
+    }
+
+    @Override
+    public Request listNews() {
+        Request request = new Request();
+        try {
+            List list = newsDao.listNews();
+            request.setData(list);
+            request.setMsg("成功");
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
     }
 }

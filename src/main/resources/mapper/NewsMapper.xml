@@ -8,8 +8,8 @@
         <result column="title" property="title" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <select id="loginAdmin" parameterType="competition.entity.News" resultMap="BaseResultMap">
-        select * from admin WHERE username=#{username} AND  password=#{password}
+    <select id="listNews" parameterType="competition.entity.News" resultMap="BaseResultMap">
+        select * from news
     </select>
 
     <insert id="addNews" parameterType="competition.entity.News">

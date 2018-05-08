@@ -22,4 +22,10 @@ public class AwardController {
     private Request addAward(Award award) {
         return awardService.addAward(award);
     }
+
+    @RequestMapping("/listbycompetition")
+    @ResponseBody
+    private Request listAwardByCompetition(String message_board) {
+        return awardService.listAwardByCompetition(message_board);
+    }
 }

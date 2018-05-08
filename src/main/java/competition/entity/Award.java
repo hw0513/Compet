@@ -47,4 +47,15 @@ public class Award {
     public void setPlayernum(Integer playernum) {
         this.playernum = playernum;
     }
+
+    @Override
+    public String toString() {
+        return "Award{" +
+                "id='" + id + '\'' +
+                ", message_board=" + message_board +
+                ", player=" + player +
+                ", lev='" + lev + '\'' +
+                ", playernum=" + playernum +
+                '}';
+    }
 }

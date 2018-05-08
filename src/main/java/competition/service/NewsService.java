@@ -5,4 +5,6 @@ import competition.entity.Request;
 
 public interface NewsService {
     Request addNews(News news);
+
+    Request listNews();
 }
