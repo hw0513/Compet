@@ -1,9 +1,9 @@
 package competition.controller;
 
-import competition.entity.Competition;
 import competition.entity.Message_board;
 import competition.entity.Request;
 import competition.service.Message_boardService;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,14 +19,10 @@ public class Message_boardController {
      * 添加比赛信息
      *
      * @param message_board  比赛信息
-     * @param competition_id 以及竞赛信息的id
      * @return
      */
     @RequestMapping(value = "/add")
-    public Request addMessage_board(Message_board message_board, String competition_id) {
-        Competition competition = new Competition();
-        competition.setId(competition_id);
-        message_board.setCompetition(competition);
+    public Request addMessage_board(@RequestBody Message_board message_board) {
         return message_boardService.addMessage_board(message_board);
     }
 

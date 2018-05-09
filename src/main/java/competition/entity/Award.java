@@ -1,13 +1,15 @@
 package competition.entity;
 
 
+import java.util.List;
+
 public class Award {
     private String id;
     private Message_board message_board;
     private User player;
     private String lev;
     private Integer playernum;
-
+    private List<User> userList;
     public String getId() {
         return id;
     }
@@ -40,6 +42,14 @@ public class Award {
         this.lev = lev;
     }
 
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
     public Integer getPlayernum() {
         return playernum;
     }
@@ -56,6 +66,7 @@ public class Award {
                 ", player=" + player +
                 ", lev='" + lev + '\'' +
                 ", playernum=" + playernum +
+                ", userList=" + userList +
                 '}';
     }
 }

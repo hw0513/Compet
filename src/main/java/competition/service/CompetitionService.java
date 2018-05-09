@@ -12,4 +12,6 @@ public interface CompetitionService {
     Request delCompetition(Competition competition);
 
     Request findAllCompetition();
+
+    Request getCompetition_way(String competition);
 }

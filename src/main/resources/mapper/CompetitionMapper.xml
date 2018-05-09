@@ -17,6 +17,10 @@
         select * from competition WHERE isdel='1'
     </select>
 
+    <select id="getCompetition_way" parameterType="STRING" resultType="INTEGER">
+        select competition_way from competition WHERE isdel='1' AND id=#{competition}
+    </select>
+
     <insert id="addCompetition" keyProperty="id" parameterType="competition.entity.Competition">
         /*采用数据库自带的uuid生成主键*/
         <selectKey keyProperty="id" resultType="String" order="BEFORE">

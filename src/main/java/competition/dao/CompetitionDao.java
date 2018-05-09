@@ -12,4 +12,6 @@ public interface CompetitionDao {
     void delCompetition(Competition competition);
 
     List<Competition> findAllCompetition();
+
+    Integer getCompetition_way(String competition);
 }

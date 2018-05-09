@@ -4,6 +4,7 @@ import competition.entity.Award;
 import competition.entity.Request;
 import competition.service.AwardService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +20,11 @@ public class AwardController {
 
     @RequestMapping("/add")
     @ResponseBody
-    private Request addAward(Award award) {
+    private Request addAward(@RequestBody Award award) {
         return awardService.addAward(award);
     }
 
-    @RequestMapping("/listbycompetition")
+    @RequestMapping("/listbymessage_board")
     @ResponseBody
     private Request listAwardByCompetition(String message_board) {
         return awardService.listAwardByCompetition(message_board);

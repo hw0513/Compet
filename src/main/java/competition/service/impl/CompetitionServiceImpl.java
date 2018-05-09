@@ -65,4 +65,17 @@ public class CompetitionServiceImpl implements CompetitionService {
         }
         return request;
     }
+
+    @Override
+    public Request getCompetition_way(String competition) {
+        Request request = new Request();
+        try {
+            Integer num = competitionDao.getCompetition_way(competition);
+            request.setData(num);
+            request.setMsg("成功");
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
+    }
 }

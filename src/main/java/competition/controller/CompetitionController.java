@@ -41,4 +41,15 @@ public class CompetitionController {
     private Request findAllCompetition() {
         return competitionService.findAllCompetition();
     }
+
+    /**
+     * 获取参赛人数
+     *
+     * @param competition
+     * @return
+     */
+    @RequestMapping("/competition_way")
+    private Request getCompetition_way(String competition) {
+        return competitionService.getCompetition_way(competition);
+    }
 }
