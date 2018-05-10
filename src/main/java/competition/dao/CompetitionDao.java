@@ -1,6 +1,7 @@
 package competition.dao;
 
 import competition.entity.Competition;
+import competition.entity.Page;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface CompetitionDao {
     List<Competition> findAllCompetition();
 
     Integer getCompetition_way(String competition);
+
+    List<Competition> findCompetitionByPage(Page page);
 }

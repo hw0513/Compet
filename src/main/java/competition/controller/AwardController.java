@@ -18,12 +18,23 @@ public class AwardController {
     @Resource
     private AwardService awardService;
 
+    /**
+     * 添加报名信息
+     *
+     * @param award
+     * @return Request
+     */
     @RequestMapping("/add")
     @ResponseBody
     public Request addAward(@RequestBody Award award) {
         return awardService.addAward(award);
     }
 
+    /**
+     * 查看报名信息
+     * @param message_board（比赛id）
+     * @return
+     */
     @RequestMapping("/listbymessage_board")
     @ResponseBody
     public Request listAwardByCompetition(String message_board) {

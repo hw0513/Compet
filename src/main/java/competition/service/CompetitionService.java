@@ -1,6 +1,7 @@
 package competition.service;
 
 import competition.entity.Competition;
+import competition.entity.Page;
 import competition.entity.Request;
 
 public interface CompetitionService {
@@ -14,4 +15,6 @@ public interface CompetitionService {
     Request findAllCompetition();
 
     Request getCompetition_way(String competition);
+
+    Request findCompetitionByPage(Page page);
 }

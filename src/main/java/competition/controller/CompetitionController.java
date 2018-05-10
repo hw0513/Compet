@@ -1,9 +1,11 @@
 package competition.controller;
 
 import competition.entity.Competition;
+import competition.entity.Page;
 import competition.entity.Request;
 import competition.service.CompetitionService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,6 +42,14 @@ public class CompetitionController {
     @RequestMapping("/list")
     public Request findAllCompetition() {
         return competitionService.findAllCompetition();
+    }
+
+
+    @RequestMapping("/listByPage")
+    @ResponseBody
+    public Request findCompetitionByPage(@RequestBody Page page) {
+        page.setStart_items((page.getPageCode() - 1) * page.getLimit());
+        return competitionService.findCompetitionByPage(page);
     }
 
     /**

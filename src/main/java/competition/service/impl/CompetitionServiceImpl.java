@@ -2,6 +2,7 @@ package competition.service.impl;
 
 import competition.dao.CompetitionDao;
 import competition.entity.Competition;
+import competition.entity.Page;
 import competition.entity.Request;
 import competition.service.CompetitionService;
 import org.springframework.stereotype.Service;
@@ -72,6 +73,19 @@ public class CompetitionServiceImpl implements CompetitionService {
         try {
             Integer num = competitionDao.getCompetition_way(competition);
             request.setData(num);
+            request.setMsg("成功");
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
+    }
+
+    @Override
+    public Request findCompetitionByPage(Page page) {
+        Request request = new Request();
+        try {
+            List list = competitionDao.findCompetitionByPage(page);
+            request.setData(list);
             request.setMsg("成功");
         } catch (Exception e) {
             request.setMsg("失败");
