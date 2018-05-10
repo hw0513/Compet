@@ -20,25 +20,25 @@ public class CompetitionController {
 
     @RequestMapping("/add")
     @ResponseBody
-    private Request addCompetition(Competition competition) {
+    public Request addCompetition(Competition competition) {
         return competitionService.addCompetition(competition);
     }
 
 
     @RequestMapping("/update")
     @ResponseBody
-    private Request updateCompetition(Competition competition) {
+    public Request updateCompetition(Competition competition) {
         return competitionService.updateCompetition(competition);
     }
 
     @RequestMapping("/del")
     @ResponseBody
-    private Request delCompetition(Competition competition) {
+    public Request delCompetition(Competition competition) {
         return competitionService.delCompetition(competition);
     }
 
     @RequestMapping("/list")
-    private Request findAllCompetition() {
+    public Request findAllCompetition() {
         return competitionService.findAllCompetition();
     }
 
@@ -49,7 +49,7 @@ public class CompetitionController {
      * @return
      */
     @RequestMapping("/competition_way")
-    private Request getCompetition_way(String competition) {
+    public Request getCompetition_way(String competition) {
         return competitionService.getCompetition_way(competition);
     }
 }

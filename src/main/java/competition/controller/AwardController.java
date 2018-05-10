@@ -20,13 +20,13 @@ public class AwardController {
 
     @RequestMapping("/add")
     @ResponseBody
-    private Request addAward(@RequestBody Award award) {
+    public Request addAward(@RequestBody Award award) {
         return awardService.addAward(award);
     }
 
     @RequestMapping("/listbymessage_board")
     @ResponseBody
-    private Request listAwardByCompetition(String message_board) {
+    public Request listAwardByCompetition(String message_board) {
         return awardService.listAwardByCompetition(message_board);
     }
 }
