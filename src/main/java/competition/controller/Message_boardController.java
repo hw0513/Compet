@@ -19,7 +19,7 @@ public class Message_boardController {
      * 添加比赛信息
      *
      * @param message_board  比赛信息
-     * @return
+     * @return Request
      */
     @RequestMapping(value = "/add")
     public Request addMessage_board(@RequestBody Message_board message_board) {
