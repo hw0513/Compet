@@ -21,6 +21,10 @@
         select * from competition WHERE isdel='1' limit #{start_items},#{limit}
     </select>
 
+    <select id="findCountCompetition" resultType="INTEGER">
+        select count(*) from competition WHERE isdel='1'
+    </select>
+
     <select id="getCompetition_way" parameterType="STRING" resultType="INTEGER">
         select competition_way from competition WHERE isdel='1' AND id=#{competition}
     </select>

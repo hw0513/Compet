@@ -17,4 +17,6 @@ public interface CompetitionService {
     Request getCompetition_way(String competition);
 
     Request findCompetitionByPage(Page page);
+
+    Request findCountCompetition();
 }

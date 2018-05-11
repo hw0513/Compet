@@ -17,4 +17,6 @@ public interface CompetitionDao {
     Integer getCompetition_way(String competition);
 
     List<Competition> findCompetitionByPage(Page page);
+
+    Integer findCountCompetition();
 }

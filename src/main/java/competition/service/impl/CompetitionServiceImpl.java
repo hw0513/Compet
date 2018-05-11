@@ -92,4 +92,16 @@ public class CompetitionServiceImpl implements CompetitionService {
         }
         return request;
     }
+
+    @Override
+    public Request findCountCompetition() {
+        Request request = new Request();
+        try {
+            request.setData(competitionDao.findCountCompetition());
+            request.setMsg("成功");
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
+    }
 }
