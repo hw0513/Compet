@@ -27,9 +27,8 @@ public class Message_boardController {
 
     /**
      * 修改比赛信息
-     *
-     * @param message_board
-     * @return
+     * @param message_board message_board的ID
+     * @return 是否修改成功
      */
     @RequestMapping("/update")
     public Request updateMessage_board(@RequestBody Message_board message_board) {
@@ -39,8 +38,8 @@ public class Message_boardController {
     /**
      * 删除比赛信息
      *
-     * @param message_board
-     * @return
+     * @param message_board message_board的ID
+     * @return Request 是否成功
      */
     @RequestMapping("/del")
     public Request delMessage_board(Message_board message_board) {
@@ -48,7 +47,7 @@ public class Message_boardController {
     }
 
     /**
-     *参看所有比赛信息
+     *查看所有比赛信息
      * @return
      */
     @RequestMapping("/list")
@@ -58,10 +57,20 @@ public class Message_boardController {
 
     /**
      *查看正在报名的比赛信息
-     * @return
+     * @return Request 所有报名的比赛信息
      */
     @RequestMapping("/endRegistration")
     public Request endRegistrationMessage_board() {
         return message_boardService.endRegistrationMessage_board();
+    }
+
+    /**
+     * 查看成功举办的比赛信息
+     *
+     * @return
+     */
+    @RequestMapping("/endCompetition")
+    public Request endCompetitionMessage_board() {
+        return message_boardService.endCompetitionMessage_board();
     }
 }

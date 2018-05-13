@@ -13,4 +13,6 @@ public interface Message_boardService {
     Request delMessage_board(Message_board message_board);
 
     Request endRegistrationMessage_board();
+
+    Request endCompetitionMessage_board();
 }

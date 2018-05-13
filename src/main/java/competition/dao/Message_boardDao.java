@@ -12,4 +12,6 @@ public interface Message_boardDao {
     List<Message_board> listMessage_board();
 
     List<Message_board> endRegistrationMessage_board();
+
+    List<Message_board> endCompetitionMessage_board();
 }

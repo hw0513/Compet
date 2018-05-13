@@ -69,4 +69,18 @@ public class Message_boardServiceImpl implements Message_boardService {
 
         return request;
     }
+
+    @Override
+    public Request endCompetitionMessage_board() {
+        Request request = new Request();
+        try {
+            List list = message_boardDao.endCompetitionMessage_board();
+            request.setData(list);
+            request.setMsg("成功");
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+
+        return request;
+    }
 }
