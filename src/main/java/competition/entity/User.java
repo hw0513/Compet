@@ -18,7 +18,6 @@ public class User {
         this.id = id;
     }
 
-
     public String getPassword() {
         return password;
     }

@@ -27,7 +27,7 @@ public class Message_boardController {
     }
 
     @RequestMapping("/update")
-    public Request updateMessage_board(Message_board message_board) {
+    public Request updateMessage_board(@RequestBody Message_board message_board) {
         return message_boardService.updateMessage_board(message_board);
     }
 

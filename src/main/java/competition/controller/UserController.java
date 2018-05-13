@@ -43,4 +43,10 @@ public class UserController {
     public Request delUser(User user) {
         return userService.delUser(user);
     }
+
+    @RequestMapping("/findUserBySchool_num")
+    @ResponseBody
+    public Request findUserBySchool_num(User user) {
+        return userService.findUserBySchool_num(user);
+    }
 }

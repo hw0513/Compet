@@ -38,7 +38,8 @@
     </insert>
 
     <update id="updateMessage_board" parameterType="competition.entity.Message_board">
-        UPDATE message_board SET competition=#{competition.id},start_enter=#{start_enter}, end_enter=#{end_enter},place=#{place},begin_competition=#{begin_competition} WHERE id =#{id}
+        UPDATE message_board SET start_enter=#{start_enter},
+        end_enter=#{end_enter},place=#{place},begin_competition=#{begin_competition} WHERE id =#{id}
     </update>
 
     <select id="endRegistrationMessage_board" parameterType="competition.entity.Message_board"

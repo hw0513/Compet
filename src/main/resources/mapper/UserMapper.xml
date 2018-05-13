@@ -18,13 +18,17 @@
         select * from user WHERE school_num=#{school_num} AND  password=#{password} AND isdel='1'
     </select>
 
+    <select id="findUserBySchool_num" parameterType="competition.entity.User" resultType="competition.entity.User">
+        select id,school_num,name,phone,user_class from user WHERE school_num=#{school_num} AND isdel='1'
+    </select>
+
     <insert id="addUser" keyProperty="id" parameterType="competition.entity.User">
         /*采用数据库自带的uuid生成主键*/
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual
         </selectKey>
         insert into user(id,school_num,password,name,phone,user_class,isdel) VALUES (
-        #{id},#{school_num},#{password},#{name},#{phone},#{user_class},#{isdel}
+        #{id},#{school_num},#{password},#{name},#{phone},#{user_class},'1'
         )
     </insert>
 

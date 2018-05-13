@@ -13,4 +13,6 @@ public interface UserDao {
     void updateUser(User user);
 
     void delUser(User user);
+
+    User findUserBySchool_num(User user);
 }

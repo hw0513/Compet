@@ -11,4 +11,6 @@ public interface UserService {
     Request updateUser(User user);
 
     Request delUser(User user);
+
+    Request findUserBySchool_num(User user);
 }

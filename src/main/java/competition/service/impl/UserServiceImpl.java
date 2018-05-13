@@ -66,4 +66,17 @@ public class UserServiceImpl implements UserService {
         }
         return request;
     }
+
+    @Override
+    public Request findUserBySchool_num(User user) {
+        Request request = new Request();
+        try {
+            user = userDao.findUserBySchool_num(user);
+            request.setMsg("成功");
+            request.setData(user);
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
+    }
 }
