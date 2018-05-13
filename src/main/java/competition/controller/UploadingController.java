@@ -12,6 +12,13 @@ import java.util.UUID;
 @RequestMapping("/upload")
 public class UploadingController {
 
+    /**
+     * 上传文件
+     *
+     * @param file
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/testuploadimg", method = RequestMethod.POST)
     public @ResponseBody
     String uploadImg(@RequestParam("file") MultipartFile file, HttpServletRequest request) {

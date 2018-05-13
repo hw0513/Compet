@@ -31,7 +31,7 @@ public class AwardController {
     }
 
     /**
-     * 查看报名信息
+     * 查看报名信息按队伍返回
      * @param message_board（比赛id）
      * @return
      */

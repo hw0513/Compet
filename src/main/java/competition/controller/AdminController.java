@@ -19,6 +19,12 @@ public class AdminController {
     private AdminService adminService;
 
 
+    /**
+     * 管理员注册
+     *
+     * @param admin
+     * @return Request 成功或者失败
+     */
     @RequestMapping("/add")
     @ResponseBody
     public Request addAdmin(Admin admin) {
@@ -26,12 +32,23 @@ public class AdminController {
         return adminService.addAdmin(admin);
     }
 
+    /**
+     * 管理员登陆
+     *
+     * @param admin
+     * @return Request 成功或者失败
+     */
     @RequestMapping("/login")
     @ResponseBody
     public Request loginAdmin(Admin admin) {
         return adminService.loginAdmin(admin);
     }
 
+    /**
+     * 修改管理员信息
+     * @param admin
+     * @return
+     */
     @RequestMapping("/update")
     @ResponseBody
     public Request updateAdmin(Admin admin) {

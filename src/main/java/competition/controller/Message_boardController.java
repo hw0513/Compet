@@ -17,7 +17,6 @@ public class Message_boardController {
 
     /**
      * 添加比赛信息
-     *
      * @param message_board  比赛信息
      * @return Request
      */
@@ -26,21 +25,41 @@ public class Message_boardController {
         return message_boardService.addMessage_board(message_board);
     }
 
+    /**
+     * 修改比赛信息
+     *
+     * @param message_board
+     * @return
+     */
     @RequestMapping("/update")
     public Request updateMessage_board(@RequestBody Message_board message_board) {
         return message_boardService.updateMessage_board(message_board);
     }
 
+    /**
+     * 删除比赛信息
+     *
+     * @param message_board
+     * @return
+     */
     @RequestMapping("/del")
     public Request delMessage_board(Message_board message_board) {
         return message_boardService.delMessage_board(message_board);
     }
 
+    /**
+     *参看所有比赛信息
+     * @return
+     */
     @RequestMapping("/list")
     public Request listMessage_board() {
         return message_boardService.listMessage_board();
     }
 
+    /**
+     *查看正在报名的比赛信息
+     * @return
+     */
     @RequestMapping("/endRegistration")
     public Request endRegistrationMessage_board() {
         return message_boardService.endRegistrationMessage_board();

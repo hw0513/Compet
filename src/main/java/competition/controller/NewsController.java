@@ -17,12 +17,23 @@ public class NewsController {
     private NewsService newsService;
 
 
+    /**
+     * 添加新闻
+     *
+     * @param news 新闻信息
+     * @return Request是否成功
+     */
     @RequestMapping("/add")
     @ResponseBody
     public Request addNews(News news) {
         return newsService.addNews(news);
     }
 
+    /**
+     * 查询所有新闻
+     *
+     * @return Request是否成功
+     */
     @RequestMapping("/list")
     @ResponseBody
     public Request listNews() {
