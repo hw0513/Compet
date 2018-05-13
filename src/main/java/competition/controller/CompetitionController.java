@@ -88,8 +88,7 @@ public class CompetitionController {
     }
 
     /**
-     * 获取参赛人数
-     *
+     * 根据id获取参赛人数
      * @param competition
      * @return 参赛的人数
      */

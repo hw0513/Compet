@@ -17,7 +17,7 @@ public class UploadingController {
      *
      * @param file
      * @param request
-     * @return
+     * @return 文件地址
      */
     @RequestMapping(value = "/testuploadimg", method = RequestMethod.POST)
     public @ResponseBody
