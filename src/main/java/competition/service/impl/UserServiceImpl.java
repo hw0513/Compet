@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Request addUser(User user) {
         Request request = new Request();
-        request.setData(user);
         try {
             userDao.addUser(user);
             request.setMsg("成功");
@@ -32,7 +31,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Request loginUser(User user) {
         Request request = new Request();
-        request.setData(user);
         if (userDao.loginUser(user).size() > 0) {
             request.setMsg("成功");
         } else {
@@ -44,7 +42,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Request updateUser(User user) {
         Request request = new Request();
-        request.setData(user);
         try {
             userDao.updateUser(user);
             request.setMsg("成功");
@@ -57,7 +54,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Request delUser(User user) {
         Request request = new Request();
-        request.setData(user);
         try {
             userDao.delUser(user);
             request.setMsg("成功");
