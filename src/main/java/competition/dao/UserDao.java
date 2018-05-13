@@ -15,4 +15,6 @@ public interface UserDao {
     void delUser(User user);
 
     User findUserBySchool_num(User user);
+
+    void updatePasswordBySchool_num(User user);
 }

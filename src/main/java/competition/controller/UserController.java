@@ -21,23 +21,16 @@ public class UserController {
 
     /**
      * 添加信息
-     *
      * @param user
      * @return
      */
     @RequestMapping("/add")
     @ResponseBody
     public Request addUser(User user) {
-
         return userService.addUser(user);
     }
 
-    /**
-     * 用户登陆
-     *
-     * @param user
-     * @return
-     */
+
     @RequestMapping("/login")
     @ResponseBody
     public Request loginUser(User user) {
@@ -75,5 +68,17 @@ public class UserController {
     @ResponseBody
     public Request findUserBySchool_num(User user) {
         return userService.findUserBySchool_num(user);
+    }
+
+    /**
+     * 通过学号修改密码
+     *
+     * @param user
+     * @return
+     */
+    @RequestMapping("/updatePasswordBySchool_num")
+    @ResponseBody
+    public Request updatePasswordBySchool_num(User user) {
+        return userService.updatePasswordBySchool_num(user);
     }
 }

@@ -33,10 +33,14 @@
     </insert>
 
     <update id="updateUser" parameterType="competition.entity.User">
-        UPDATE user SET school_num=#{school_num},password=#{password},name=#{name},phone=#{phone},user_class=#{user_class} WHERE id =#{id}
+        UPDATE user SET school_num=#{school_num},name=#{name},phone=#{phone},user_class=#{user_class} WHERE id =#{id}
     </update>
 
     <update id="delUser" parameterType="competition.entity.User">
         UPDATE user SET isdel='0' WHERE id =#{id}
+    </update>
+
+    <update id="updatePasswordBySchool_num" parameterType="competition.entity.User">
+        UPDATE user SET password=#{password} WHERE school_num =#{school_num}
     </update>
 </mapper>

@@ -1,5 +1,6 @@
 package competition.service.impl;
 
+import competition.Utils.MD5Util;
 import competition.dao.UserDao;
 import competition.entity.Request;
 import competition.entity.User;
@@ -18,6 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Request addUser(User user) {
+        user.setPassword(MD5Util.getMd5(user.getPassword()));
         Request request = new Request();
         try {
             userDao.addUser(user);
@@ -30,6 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Request loginUser(User user) {
+        user.setPassword(MD5Util.getMd5(user.getPassword()));
         Request request = new Request();
         if (userDao.loginUser(user).size() > 0) {
             request.setMsg("成功");
@@ -70,6 +73,19 @@ public class UserServiceImpl implements UserService {
             user = userDao.findUserBySchool_num(user);
             request.setMsg("成功");
             request.setData(user);
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
+    }
+
+    @Override
+    public Request updatePasswordBySchool_num(User user) {
+        user.setPassword(MD5Util.getMd5(user.getPassword()));
+        Request request = new Request();
+        try {
+            userDao.updatePasswordBySchool_num(user);
+            request.setMsg("成功");
         } catch (Exception e) {
             request.setMsg("失败");
         }
