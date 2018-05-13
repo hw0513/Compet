@@ -48,7 +48,7 @@ public class Message_boardController {
 
     /**
      *查看所有比赛信息
-     * @return
+     * @return Request 所有比赛信息
      */
     @RequestMapping("/list")
     public Request listMessage_board() {
@@ -65,8 +65,7 @@ public class Message_boardController {
     }
 
     /**
-     * 查看成功举办的比赛信息
-     *
+     *查看成功举办的比赛信息
      * @return
      */
     @RequestMapping("/endCompetition")
