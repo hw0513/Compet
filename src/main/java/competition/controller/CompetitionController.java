@@ -40,7 +40,7 @@ public class CompetitionController {
 
     @RequestMapping("/update")
     @ResponseBody
-    public Request updateCompetition(Competition competition) {
+    public Request updateCompetition(@RequestBody Competition competition) {
         return competitionService.updateCompetition(competition);
     }
 
