@@ -15,4 +15,6 @@ public interface Message_boardService {
     Request endRegistrationMessage_board();
 
     Request endCompetitionMessage_board();
+
+    Request findMessage_boardById(Message_board message_board);
 }

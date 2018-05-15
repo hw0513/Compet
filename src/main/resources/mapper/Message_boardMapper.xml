@@ -52,5 +52,9 @@
         select * from message_board LEFT JOIN competition ON message_board.competition=competition.id WHERE message_board.isdel='1'AND localtime>begin_competition order by begin_competition desc  ;
     </select>
 
+    <select id="findMessage_boardById" parameterType="competition.entity.Message_board"
+            resultMap="BaseResultMap">
+        select * from message_board LEFT JOIN competition ON (select competition from message_board WHERE message_board.id=#{id})=competition.id WHERE message_board.isdel='1'AND message_board.id=#{id};
+    </select>
 
 </mapper>

@@ -72,4 +72,9 @@ public class Message_boardController {
     public Request endCompetitionMessage_board() {
         return message_boardService.endCompetitionMessage_board();
     }
+
+    @RequestMapping("/findById")
+    public Request findMessage_boardById(Message_board message_board) {
+        return message_boardService.findMessage_boardById(message_board);
+    }
 }

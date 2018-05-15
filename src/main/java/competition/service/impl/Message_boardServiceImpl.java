@@ -83,4 +83,17 @@ public class Message_boardServiceImpl implements Message_boardService {
 
         return request;
     }
+
+    @Override
+    public Request findMessage_boardById(Message_board message_board) {
+        Request request = new Request();
+        try {
+            message_board = message_boardDao.findMessage_boardById(message_board);
+            request.setData(message_board);
+            request.setMsg("成功");
+        } catch (Exception e) {
+            request.setMsg("失败");
+        }
+        return request;
+    }
 }
